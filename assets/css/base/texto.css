@@ -1,0 +1,55 @@
+.texto-cairo-black {
+    font-family: "Cairo Black" !important;
+}
+
+.texto-cairo-bold {
+    font-family: "Cairo Bold" !important;
+}
+
+.texto-cairo-semi-bold {
+    font-family: "Cairo Semi Bold" !important;
+}
+
+.texto-cairo-extra-light {
+    font-family: "Cairo Extra Light" !important;
+}
+
+.texto-cairo-light {
+    font-family: "Cairo Light" !important;
+}
+
+
+
+
+
+.texto-color-amarillo {
+    color: var(--main-color-amarillo);
+}
+
+.texto-color-magenta {
+    color: var(--main-color-magenta);
+}
+
+.texto-color-morado {
+    color: var(--main-color-morado);
+}
+
+.texto-color-cyan {
+    color: var(--main-color-cyan);
+}
+
+.texto-hover-magenta:hover {
+    color: var(--main-color-magenta);
+}
+
+.texto-hover-amarillo:hover {
+    color: var(--main-color-amarillo);
+}
+
+.texto-hover-morado:hover {
+    color: var(--main-color-morado);
+}
+
+.texto-hover-cyan:hover {
+    color: var(--main-color-cyan);
+}
