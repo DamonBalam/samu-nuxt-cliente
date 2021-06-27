@@ -11,7 +11,7 @@
           alt="hero"
           class="hero-img"
         >
-          <v-container>
+          <v-container :class="marginMovil" class="animate__animated ">
             <v-row>
               <v-col
                 cols="12"
@@ -60,13 +60,14 @@
                     >¿Olvidaste tu contraseña?
                     </nuxt-link>
                   </v-card-text>
-                  <v-card-actions>
+                  <v-card-actions class="my-0 py-0">
                     <v-row>
                       <v-col cols="12" md="4">
                         <v-btn
                           :disabled="!valid"
                           color="black"
                           class="white--text"
+                          tile
                           block
                           @click="login"
                         >ingresar
@@ -129,6 +130,22 @@ export default {
         case 'xl':
           return 'https://res.cloudinary.com/balamcode/image/upload/v1624821138/samu/Bg_1_cbdnid.jpg'
       }
+    },
+    marginMovil() {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs':
+          return 'margin-mobile animate__fadeInUp'
+        case 'sm':
+          return 'margin-mobile animate__fadeInUp'
+        case 'md':
+          return 'no-margin animate__fadeInRight'
+        case 'lg':
+          return 'no-margin animate__fadeInRight'
+        case 'xl':
+          return 'no-margin animate__fadeInRight'
+        default:
+          return 'no-margin animate__fadeInRight'
+      }
     }
   },
   methods: {
@@ -145,7 +162,7 @@ export default {
 }
 
 .title-custom {
-  font-size: 3rem;
+  font-size: 2.8rem;
 }
 
 .parrafo-custom {
@@ -158,5 +175,15 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
 //background-position: top center; //background-image: url("~/assets/brand/Bg_1_Movil.jpg");
+}
+
+.margin-mobile{
+  margin-top: 1rem;
+  margin-bottom: 40rem;
+}
+
+.no-margin{
+
+  margin: 5rem auto 0 auto;
 }
 </style>
