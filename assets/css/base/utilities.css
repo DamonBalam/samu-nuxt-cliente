@@ -11,3 +11,9 @@
     color: white;
     background-color: var(--main-color-cyan);
 }
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+}
