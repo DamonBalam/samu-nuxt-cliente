@@ -22,7 +22,7 @@
       app
       color="primary"
     >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span>SAMU &copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>
 
