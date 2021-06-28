@@ -10,6 +10,7 @@
 import PanelLayout from "../../../layouts/panelLayout"
 export default {
   name: "PanelScreen",
+  // middleware: "auth",
   components: {PanelLayout}
 }
 </script>

@@ -1,7 +1,7 @@
 /* LINKS */
 .active-item {
-    color: white;
-    background-color: var(--main-color-cyan);
+    color: white!important;
+    background-color: var(--main-color-cyan)!important;
 }
 .active-dropdown {
     color: white;

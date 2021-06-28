@@ -11,7 +11,7 @@
         >
           <v-card
             flat
-            elevation="2"
+            elevation="0"
           >
             <v-toolbar
               flat
@@ -35,7 +35,8 @@
             <v-card-actions class="mt-0 pt-0">
               <v-btn
                 block
-                color="secondary"
+                small
+                outlined
               >
                 Guardar
                 <v-icon
@@ -55,7 +56,7 @@
         >
           <v-card
             flat
-            elevation="2"
+            elevation="0"
           >
             <v-toolbar
               flat
@@ -124,7 +125,8 @@
             <v-card-actions>
               <v-btn
                 block
-                color="secondary"
+                small
+                outlined
               >
                 Guardar
                 <v-icon

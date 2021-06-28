@@ -8,19 +8,18 @@
     >
       <v-list>
         <v-list-item
-          class="black--text"
           v-for="(item, i) in items"
           :key="i"
           :to="item.to"
           router
           exact
+          exact-active-class="active-item"
         >
           <v-list-item-action>
-            <v-icon color="black">{{ item.icon }}</v-icon>
+            <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title
-              class="black--text"
               v-text="item.title"
             />
           </v-list-item-content>
@@ -28,9 +27,10 @@
       </v-list>
       <template v-slot:append>
         <div class="pa-2">
-          <v-btn block dark text color="secondary">
-            Cerrar Sesión
-          </v-btn>
+          <logout/>
+<!--          <v-btn block dark text color="secondary">-->
+<!--            Cerrar Sesión-->
+<!--          </v-btn>-->
         </div>
       </template>
     </v-navigation-drawer>
@@ -58,8 +58,10 @@
 </template>
 
 <script>
+import Logout from "../components/UI/LogoutComponent"
 export default {
   name: "panelLayout",
+  components: {Logout},
   data() {
     return {
       drawer: true,

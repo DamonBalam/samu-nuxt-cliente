@@ -11,7 +11,10 @@
           alt="hero"
           class="hero-img"
         >
-          <v-container :class="marginMovil" class="animate__animated ">
+          <v-container
+            :class="marginMovil"
+            class="animate__animated "
+          >
             <v-row>
               <v-col
                 cols="12"
@@ -34,7 +37,11 @@
                     <h4>ACCEDER A SU CUENTA</h4>
                   </v-card-title>
                   <v-card-text>
-                    <v-form ref="login" v-model="valid" lazy-validation>
+                    <v-form
+                      ref="login"
+                      v-model="valid"
+                      lazy-validation
+                    >
                       <v-text-field
                         v-model="formulario.email"
                         :rules="emailRules"
@@ -53,6 +60,15 @@
                         label="Password"
                         required
                       ></v-text-field>
+
+                      <v-alert
+                        v-if="msgError !== null"
+                        dense
+                        text
+                        type="error"
+                      >{{ msgError }}
+
+                      </v-alert>
                     </v-form>
                     <nuxt-link
                       to="/recuperar-cuenta"
@@ -62,7 +78,10 @@
                   </v-card-text>
                   <v-card-actions class="my-0 py-0">
                     <v-row>
-                      <v-col cols="12" md="4">
+                      <v-col
+                        cols="12"
+                        md="4"
+                      >
                         <v-btn
                           :disabled="!valid"
                           color="black"
@@ -73,7 +92,10 @@
                         >ingresar
                         </v-btn>
                       </v-col>
-                      <v-col cols="12" md="8">
+                      <v-col
+                        cols="12"
+                        md="8"
+                      >
                         <v-btn
                           to="/registro"
                           text
@@ -95,6 +117,7 @@
 </template>
 
 <script>
+import {mapActions, mapMutations} from 'vuex'
 import AuthLayout from "../../layouts/authLayout"
 
 export default {
@@ -102,7 +125,8 @@ export default {
   components: {AuthLayout},
   data() {
     return {
-      valid:false,
+      valid: false,
+      msgError:null,
       formulario: {
         email: null,
         password: null
@@ -111,9 +135,17 @@ export default {
         v => !!v || 'E-mail es requerido',
         v => /.+@.+\..+/.test(v) || 'E-mail debe ser valido',
       ],
-      passRules:[
+      passRules: [
         v => !!v || 'Password es requerido',
       ]
+    }
+  },
+  beforeMount() {
+    const token = localStorage.getItem('token')
+
+    if (token !== null) {
+      this.setAuth(true)
+      this.$router.push('/control-panel/panel')
     }
   },
   computed: {
@@ -149,8 +181,19 @@ export default {
     }
   },
   methods: {
-    login() {
-      this.$refs.login.validate()
+    ...mapMutations({setAuth: 'auth/SET_AUTENTICADO'}),
+    ...mapActions({authLogin: 'auth/login'}),
+    async login() {
+      if ( this.$refs.login.validate() ) {
+        const data = await this.authLogin(this.formulario)
+        if ( data.status === 'Error' ){
+          this.msgError = data.message
+        }
+      } else {
+        setTimeout(()=> {
+          this.$refs.login.reset()
+        },3000)
+      }
     }
   },
 }
@@ -177,12 +220,11 @@ export default {
 //background-position: top center; //background-image: url("~/assets/brand/Bg_1_Movil.jpg");
 }
 
-.margin-mobile{
-  margin-top: 1rem;
+.margin-mobile {
   margin-bottom: 40rem;
 }
 
-.no-margin{
+.no-margin {
 
   margin: 5rem auto 0 auto;
 }
