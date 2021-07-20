@@ -11,6 +11,16 @@
   color: white;
   background-color: var(--main-color-cyan);
 }
+
+.texto-capitalizado{
+  text-transform: capitalize!important;
+}
+
+.btn-border-black {
+  border: .5px solid black!important;
+  border-color: black!important;
+}
+
 a {
   text-decoration: none;
 }
