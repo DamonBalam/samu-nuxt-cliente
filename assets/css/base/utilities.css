@@ -1,15 +1,15 @@
 /* LINKS */
 .active-item {
-    color: white!important;
-    background-color: var(--main-color-cyan)!important;
+  color: white !important;
+  background-color: var(--main-color-cyan) !important;
 }
 .active-dropdown {
-    color: white;
-    background-color: rgba(156, 163, 175, 1);
+  color: white;
+  background-color: rgba(156, 163, 175, 1);
 }
 .nav-item:hover {
-    color: white;
-    background-color: var(--main-color-cyan);
+  color: white;
+  background-color: var(--main-color-cyan);
 }
 a {
   text-decoration: none;

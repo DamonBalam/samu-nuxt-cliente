@@ -1,29 +1,26 @@
 <template>
   <panel-layout>
     <template v-slot:main>
-      <h1 class="texto-cairo-bold mb-2">Configuración</h1>
+      <h1 class="mb-2">Configuración</h1>
 
       <v-row dense>
-        <v-col
-          cols="12"
-          md="6"
-          class="px-2 mb-4"
-        >
-          <v-card
-            flat
-            elevation="0"
-          >
-            <v-toolbar
-              flat
-              dense
-            >
-              <v-toolbar-title class=" mx-auto">Logo de la Tienda</v-toolbar-title>
+        <v-col cols="12" md="5">
+          <v-card height="350">
+            <v-toolbar flat dense>
+              <v-toolbar-title class="mx-auto"
+                >Logo de la Tienda</v-toolbar-title
+              >
             </v-toolbar>
-            <v-card-text class="mb-0 pb-0">
-              <v-img
-                src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg"
-                aspect-ratio="2"
-              ></v-img>
+            <v-card-text>
+              <div class="d-flex flex-column justify-center align-center">
+                <v-img
+                  src="https://png.pngtree.com/png-vector/20191110/ourmid/pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg"
+                  width="400"
+                  aspect-ratio="2"
+                  max-height="300"
+                ></v-img>
+              </div>
+
               <v-file-input
                 label="Subir Imagen"
                 dense
@@ -32,52 +29,17 @@
                 class="mt-4"
               ></v-file-input>
             </v-card-text>
-            <v-card-actions class="mt-0 pt-0">
-              <v-btn
-                block
-                small
-                outlined
-              >
-                Guardar
-                <v-icon
-                  small
-                  left
-                >mdi-content-save
-                </v-icon>
-              </v-btn>
-            </v-card-actions>
           </v-card>
         </v-col>
 
-        <v-col
-          cols="12"
-          md="6"
-          class="px-2"
-        >
-          <v-card
-            flat
-            elevation="0"
-          >
-            <v-toolbar
-              flat
-              dense
-              color="white"
-              class="mb-0 pb-0"
-            >
+        <v-col cols="12" md="5">
+          <v-card height="350">
+            <v-toolbar flat dense color="white" class="mb-0 pb-0">
               <v-toolbar-title>Nombre de la Tienda</v-toolbar-title>
-
-              <!--              <v-spacer></v-spacer>-->
-              <!--              <v-btn icon>-->
-              <!--                <v-icon color="black">-->
-              <!--                  mdi-content-save-->
-              <!--                </v-icon>-->
-              <!--              </v-btn>-->
             </v-toolbar>
 
-            <v-card-text class="mt-0 pt-0 mb-0 pb-0">
-              <p class="texto-cairo-light">
-                Este es el nombre que se ve en tu tienda.
-              </p>
+            <v-card-text class="mt-0 pt-0">
+              <p>Este es el nombre que se ve en tu tienda.</p>
 
               <v-text-field
                 autocomplete="off"
@@ -88,30 +50,16 @@
               ></v-text-field>
             </v-card-text>
 
-
-            <v-toolbar
-              flat
-              dense
-              color="white"
-              class="mt-0 pt-0 mb-0 pb-0"
-            >
+            <v-toolbar flat dense color="white">
               <v-toolbar-title>Nombre de Usuario</v-toolbar-title>
-
-              <!--              <v-spacer></v-spacer>-->
-              <!--              <v-btn icon>-->
-              <!--                <v-icon color="black">-->
-              <!--                  mdi-content-save-->
-              <!--                </v-icon>-->
-              <!--              </v-btn>-->
             </v-toolbar>
 
             <v-card-text class="mt-0 pt-0">
-              <p class="texto-cairo-light pb-0 mb-0">
-                Este es el nombre con el que pueden buscar tu tienda (www.samu.app/TuTienda).
+              <p class="pb-0 mb-0">
+                Este es el nombre con el que pueden buscar tu tienda
+                (www.samu.app/TuTienda).
               </p>
-              <p class="texto-cairo-light">
-                Se recomienda usar tu mismo usuario de Instagram.
-              </p>
+              <p class="">Se recomienda usar tu mismo usuario de Instagram.</p>
 
               <v-text-field
                 autocomplete="off"
@@ -121,44 +69,27 @@
                 dense
               ></v-text-field>
             </v-card-text>
-
-            <v-card-actions>
-              <v-btn
-                block
-                small
-                outlined
-              >
-                Guardar
-                <v-icon
-                  small
-                  left
-                >mdi-content-save
-                </v-icon>
-              </v-btn>
-            </v-card-actions>
           </v-card>
         </v-col>
-
       </v-row>
     </template>
   </panel-layout>
 </template>
 
 <script>
-import PanelLayout from "../../../layouts/panelLayout"
+import PanelLayout from "../../../layouts/panelLayout";
 
 export default {
   name: "ConfiguracionScreen",
-  components: {PanelLayout},
+  components: { PanelLayout },
   data() {
     return {
-      nombre_tienda: 'Samu Store',
-      nombre_usuario: 'SoySamu',
-    }
+      nombre_tienda: "Samu Store",
+      nombre_usuario: "SoySamu",
+    };
   },
-}
+};
 </script>
 
 <style scoped>
-
 </style>
