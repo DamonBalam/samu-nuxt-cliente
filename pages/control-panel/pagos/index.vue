@@ -67,7 +67,7 @@
                       <v-menu offset-y>
                         <template v-slot:activator="{ on, attrs }">
                           <v-btn v-bind="attrs" v-on="on" small outlined  elevation="1" class="texto-capitalizado">
-                            acciones
+                            Acciones
                             <v-icon right dark> mdi-chevron-down </v-icon>
                           </v-btn>
                         </template>
@@ -110,7 +110,7 @@
                       <v-menu offset-y>
                         <template v-slot:activator="{ on, attrs }">
                           <v-btn v-bind="attrs" v-on="on" small outlined  elevation="1" class="texto-capitalizado">
-                            acciones
+                            Acciones
                             <v-icon right dark> mdi-chevron-down </v-icon>
                           </v-btn>
                         </template>

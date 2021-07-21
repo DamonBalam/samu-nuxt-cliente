@@ -25,7 +25,7 @@
               </v-container>
 
               <v-container class="d-flex align-center mb-5">
-                <v-btn color="gray"  outlined fab depressed small>
+                <v-btn color="gray"  outlined fab depressed small link to="/control-panel/pagos">
                   <v-icon>mdi-check</v-icon>
                 </v-btn>
                 <div class="ml-3">
@@ -40,7 +40,7 @@
               </v-container>
 
               <v-container class="d-flex align-center mb-5">
-                <v-btn color="gray" fab depressed small outlined>
+                <v-btn color="gray" fab depressed small outlined to="/control-panel/envios-recogida" link>
                   <v-icon>mdi-check</v-icon>
                 </v-btn>
                 <div class="ml-3">

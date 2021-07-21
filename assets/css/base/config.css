@@ -11,7 +11,9 @@
 body {
   font-family: "Roboto", sans-serif;
 }
-
+.texto-color-cyan{
+  color: var(--main-color-cyan)!important;
+}
 /* ! FONDOS */
 .bg-amarillo {
   background-color: var(--main-color-amarillo);

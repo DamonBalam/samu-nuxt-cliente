@@ -13,7 +13,8 @@
 }
 
 .texto-capitalizado{
-  text-transform: capitalize!important;
+  text-transform: initial!important;
+  /* text-transform: capitalize!important; */
 }
 
 .btn-border-black {

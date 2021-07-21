@@ -50,7 +50,7 @@
                 elevation="1"
                 class="texto-capitalizado btn-border-black"
               >
-                Guardar y Añadir Otro
+                Guardar y añadir otro
               </v-btn>
             </v-col>
           </v-row>
@@ -87,7 +87,7 @@
                     elevation="1"
                     class="btn-border-black texto-capitalizado"
                   >
-                    acciones
+                    Acciones
                     <v-icon right dark> mdi-chevron-down </v-icon>
                   </v-btn>
                 </template>

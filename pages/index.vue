@@ -1,50 +1,47 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">samu-nuxt</h1>
-      <div class="links">
-        <nuxt-link rel="noopener noreferrer" class="button--green" to="/login">
-          ir a login
-        </nuxt-link>
-      </div>
-    </div>
-  </div>
+  <store-layout>
+    <template v-slot:main>
+      <!-- HERO -->
+      <v-card
+        color="primary"
+        flat
+        class="mx-10 pa-2 d-flex align-center"
+        tile
+        min-height="150"
+      >
+        <v-avatar
+          style="border-color: white !important"
+          size="130"
+          class="pa-2 grey"
+        >
+          <span class="black--text text-h5">Logo</span>
+        </v-avatar>
+        <div class="d-flex flex-column ml-5">
+          <span class="font-weight-bold white--text" style="font-size: 32px"
+            >Nombre de la Tienda</span
+          >
+          <span class="white--text">Categoria de la tienda</span>
+        </div>
+      </v-card>
+      <!-- navbar -->
+      <v-card elevation="1" class="mx-10 py-2">
+        <div class="d-flex justify-space-around align-center px-5">
+          <nuxt-link to="/" class="d-block">Inicio</nuxt-link>
+          <nuxt-link to="/" class="d-block">Producto por categoria</nuxt-link>
+          <nuxt-link to="/" class="d-block">Producto por categoria</nuxt-link>
+          <nuxt-link to="/" class="d-block">Producto por categoria</nuxt-link>
+        </div>
+      </v-card>
+    </template>
+  </store-layout>
 </template>
 
 <script>
-export default {};
+import storeLayout from "../layouts/storeLayout.vue";
+export default {
+  components: { storeLayout },
+};
 </script>
 
 <style scoped>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-  "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
