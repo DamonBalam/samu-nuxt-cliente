@@ -14,7 +14,7 @@
           >
           </v-text-field>
         </v-col>
-        <v-col cols="12" md="10" class="mt-2 mb-0 pb-0">
+        <v-col cols="12" md="10" class="mb-0 pb-0">
           <v-card width="100%">
             <v-row no-gutters>
               <v-col cols="12" class="mt-3 ml-3">
