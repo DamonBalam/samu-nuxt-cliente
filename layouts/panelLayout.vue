@@ -132,8 +132,8 @@ export default {
   justify-items: space-between;
 }
 
-.margin-custom {
+/* .margin-custom {
 //margin-left: 5rem;
-}
+} */
 
 </style>

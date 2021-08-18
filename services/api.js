@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const api = axios.create({
-  baseURL: 'http://samu.test/api',
+  baseURL: 'https://samu-host.herokuapp.com/api',
   headers: {
     'Accept': 'application/json',
     'Content-Type': 'application/json'

@@ -19,6 +19,40 @@
             <v-card-title class="mt-1 pt-0">
               Seleccionar categoría del producto
             </v-card-title>
+            <v-card-text>
+              <v-row no-gutters>
+                <v-col cols="12">
+                  <v-select
+                    v-model="categoriaForm"
+                    outlined
+                    dense
+                    :items="categorias"
+                    item-value="id"
+                    item-text="nombre"
+                    placeholder="Buscar categoría"
+                    prepend-inner-icon="mdi-magnify"
+                    append-outer-icon="mdi-plus"
+                    hide-selected
+                    @click:append-outer="agregarCategoria()"
+                    return-object
+                  >
+                  </v-select>
+                </v-col>
+                <v-col cols="12">
+                  <div class="text-start">
+                    <v-chip
+                      v-for="cat in formularioProducto.categorias"
+                      :key="cat.id"
+                      class="ma-1"
+                      close
+                    >
+                    <!-- <v-icon>{{ cat.icon }}</v-icon>  -->
+                      {{ cat.nombre }}
+                    </v-chip>
+                  </div>
+                </v-col>
+              </v-row>
+            </v-card-text>
           </v-card>
 
           <v-row dense class="mt-2">
@@ -43,48 +77,104 @@
 
       <v-row v-if="step === 2" dense class="ml-md-5 mt-md-3">
         <v-col cols="12" md="10">
-          <v-row >
+          <v-row>
             <v-col cols="8">
               <v-card class="pa-2" height="550px">
                 <v-card-text>
                   <v-form>
-                    <label for="nombre" class="font-weight-bold subtitle black--text ">Título del producto</label>
-                    <v-text-field outlined filled dense class="mt-2"></v-text-field>
+                    <label
+                      for="nombre"
+                      class="font-weight-bold subtitle black--text"
+                      >Título del producto</label
+                    >
+                    <v-text-field
+                      outlined
+                      filled
+                      dense
+                      class="mt-2"
+                    ></v-text-field>
 
-                    <label for="descripcion" class="font-weight-bold subtitle black--text ">Descripción del producto</label>
+                    <label
+                      for="descripcion"
+                      class="font-weight-bold subtitle black--text"
+                      >Descripción del producto</label
+                    >
                     <v-textarea outlined no-resize filled dense class="mt-2" />
 
-                    <label for="imagenes" class="font-weight-bold subtitle black--text d-block ">Imágenes del producto</label>
-                    <label for="imagenes" class="subtitle black--text">La primera imagen será la foto principal del producto (arrastra para acomodar).</label>
+                    <label
+                      for="imagenes"
+                      class="font-weight-bold subtitle black--text d-block"
+                      >Imágenes del producto</label
+                    >
+                    <label for="imagenes" class="subtitle black--text"
+                      >La primera imagen será la foto principal del producto
+                      (arrastra para acomodar).</label
+                    >
                   </v-form>
                 </v-card-text>
               </v-card>
             </v-col>
-            <v-col cols="4" >
+            <v-col cols="4">
               <v-card class="pa-2 mb-2" height="230px">
                 <v-card-text>
                   <v-form>
-                    <label for="nombre" class="font-weight-bold subtitle black--text mb-2">Precio</label>
-                    <v-text-field outlined filled dense prepend-inner-icon="₡" class="mt-2"></v-text-field>
-                    <span class="texto-color-cyan font-weight-bold d-block">Establecer un precio de oferta</span>
-                    <span class="black--text">Muestre descuentos en sus precios habituales. Por ejemplo :</span>
-                    <span class="d-block"><span class="text-decoration-line-through">₡10.000 </span> ₡9.500</span>
+                    <label
+                      for="nombre"
+                      class="font-weight-bold subtitle black--text mb-2"
+                      >Precio</label
+                    >
+                    <v-text-field
+                      outlined
+                      filled
+                      dense
+                      prepend-inner-icon="₡"
+                      class="mt-2"
+                    ></v-text-field>
+                    <span class="texto-color-cyan font-weight-bold d-block"
+                      >Establecer un precio de oferta</span
+                    >
+                    <span class="black--text"
+                      >Muestre descuentos en sus precios habituales. Por ejemplo
+                      :</span
+                    >
+                    <span class="d-block"
+                      ><span class="text-decoration-line-through"
+                        >₡10.000
+                      </span>
+                      ₡9.500</span
+                    >
                   </v-form>
                 </v-card-text>
               </v-card>
               <v-card class="pa-2 mb-2" height="180px">
                 <v-card-text>
                   <v-form>
-                    <label for="nombre" class="font-weight-bold subtitle black--text mb-2 d-block">Cantidad en inventario</label>
-                    <span class="black--text">Si deja el espacio en blanco no abrá limite de inventario</span>
-                    <v-text-field outlined filled dense class="mt-2"></v-text-field>
+                    <label
+                      for="nombre"
+                      class="font-weight-bold subtitle black--text mb-2 d-block"
+                      >Cantidad en inventario</label
+                    >
+                    <span class="black--text"
+                      >Si deja el espacio en blanco no abrá limite de
+                      inventario</span
+                    >
+                    <v-text-field
+                      outlined
+                      filled
+                      dense
+                      class="mt-2"
+                    ></v-text-field>
                   </v-form>
                 </v-card-text>
               </v-card>
               <v-card class="pa-2" height="120px">
-              <v-card-text>
+                <v-card-text>
                   <v-form>
-                    <label for="nombre" class="font-weight-bold subtitle black--text">Disponibilidad del Producto</label>
+                    <label
+                      for="nombre"
+                      class="font-weight-bold subtitle black--text"
+                      >Disponibilidad del Producto</label
+                    >
                     <v-switch dense></v-switch>
                   </v-form>
                 </v-card-text>
@@ -130,12 +220,32 @@
         <v-col cols="12" md="10">
           <v-card class="pa-2" height="400px">
             <v-card-text>
-                  <v-form>
-                    <label for="nombre" class="font-weight-bold subtitle black--text d-block">Variables</label>
-                    <label for="imagenes" class="subtitle">Selecciona la o las variables que correspondan a tu producto.</label>
-                    <v-select outlined filled dense class="mt-2" style="width:300px" label="Selecciona" :items="['Colores','Tallas','Colores y Tallas','Sin variables']"></v-select>
-                  </v-form>
-                </v-card-text>
+              <v-form>
+                <label
+                  for="nombre"
+                  class="font-weight-bold subtitle black--text d-block"
+                  >Variables</label
+                >
+                <label for="imagenes" class="subtitle"
+                  >Selecciona la o las variables que correspondan a tu
+                  producto.</label
+                >
+                <v-select
+                  outlined
+                  filled
+                  dense
+                  class="mt-2"
+                  style="width: 300px"
+                  label="Selecciona"
+                  :items="[
+                    'Colores',
+                    'Tallas',
+                    'Colores y Tallas',
+                    'Sin variables',
+                  ]"
+                ></v-select>
+              </v-form>
+            </v-card-text>
           </v-card>
 
           <v-row dense class="mt-2">
@@ -179,12 +289,17 @@
 import PanelLayout from "../../../layouts/panelLayout";
 import BackBtn from "../../../components/UI/BackBtnComponent";
 
+import categoriaService from "@/services/categoriaService";
+
 export default {
   name: "nuevo-producto",
   components: { BackBtn, PanelLayout },
   data() {
     return {
       step: 1,
+      formularioProducto: {
+        categorias: [],
+      },
       formulario: {
         nombre: null,
         telefono: null,
@@ -205,7 +320,12 @@ export default {
           disabled: true,
         },
       ],
+      categorias: [],
+      categoriaForm: null,
     };
+  },
+  mounted() {
+    this.fetchCategorias();
   },
   methods: {
     changeStep(v) {
@@ -232,6 +352,19 @@ export default {
         this.items[2].disabled = true;
       }
       this.step = v - 1;
+    },
+    async fetchCategorias() {
+      const { data } = await categoriaService.index();
+
+      console.log(data);
+
+      this.categorias = data.data;
+    },
+    agregarCategoria() {
+      if (this.categoriaForm !== null) {
+        this.formularioProducto.categorias.push(this.categoriaForm);
+        this.categoriaForm = null;
+      }
     },
   },
 };

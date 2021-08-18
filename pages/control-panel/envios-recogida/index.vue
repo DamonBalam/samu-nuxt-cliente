@@ -64,7 +64,7 @@
                             elevation="1"
                             class="texto-capitalizado"
                           >
-                            acciones
+                            Acciones
                             <v-icon right dark> mdi-chevron-down </v-icon>
                           </v-btn>
                         </template>
@@ -139,7 +139,7 @@
                             class="texto-capitalizado"
                             elevation="1"
                           >
-                            acciones
+                            Acciones
                             <v-icon right dark> mdi-chevron-down </v-icon>
                           </v-btn>
                         </template>

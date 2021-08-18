@@ -22,7 +22,6 @@
             v-model="search"
             dense
             outlined
-            rounded
             label="Buscar producto por nombre"
             prepend-inner-icon="mdi-magnify"
           >
@@ -32,6 +31,8 @@
         <!--    productos      -->
         <v-col cols="12" md="10" class="mt-0 pt-0">
           <v-card width="100%">
+            <v-row no-gutters dense  >
+
             <v-col cols="12" v-for="n in 10" :key="n">
               <v-container class="d-flex flex-column flex-md-row">
                 <div class="mr-auto d-flex mb-2">
@@ -59,6 +60,8 @@
               </v-container>
               <v-divider class="my-1 mb-0 py-0"></v-divider>
             </v-col>
+            </v-row>
+
           </v-card>
         </v-col>
       </v-row>

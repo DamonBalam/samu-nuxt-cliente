@@ -74,7 +74,7 @@
         </v-col>
 
         <v-col cols="12" class="mt-0 pt-0">
-          <v-btn class="texto-capitalizado font-weight-bold px-16 btn-border-black" color="primary">guardar</v-btn>
+          <v-btn class="texto-capitalizado font-weight-bold px-16 btn-border-black" color="primary">Guardar</v-btn>
         </v-col>
       </v-row>
     </template>
