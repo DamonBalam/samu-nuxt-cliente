@@ -26,7 +26,6 @@
                 dense
                 filled
                 rounded
-                prepend-icon=""
                 prepend-inner-icon="mdi-camera"
                 class="mt-4"
               ></v-file-input>

@@ -24,7 +24,7 @@ export default {
   css: ["@/assets/css/main.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["~/plugins/animate.js"],
+  plugins: ["~/plugins/animate.js","~/plugins/vuetify.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -32,7 +32,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
+    // '@nuxtjs/vuetify',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -40,23 +40,24 @@ export default {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    theme: {
-      dark: false,
-      themes: {
-        light: {
-          primary: '#06b0d7',
-          accent: colors.grey.darken3,
-          secondary: '#673ab7',
-          info: colors.teal.lighten1,
-          warning: '#ffc000',
-          error: '#ff005d',
-          success: colors.green.accent3
-        }
-      }
-    }
+    // customVariables: ['~/assets/variables.scss'],
+    // theme: {
+    //   dark: false,
+    //   themes: {
+    //     light: {
+    //       primary: '#06b0d7',
+    //       accent: colors.grey.darken3,
+    //       secondary: '#673ab7',
+    //       info: colors.teal.lighten1,
+    //       warning: '#ffc000',
+    //       error: '#ff005d',
+    //       success: colors.green.accent3
+    //     }
+    //   }
+    // }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {
+  }
 }

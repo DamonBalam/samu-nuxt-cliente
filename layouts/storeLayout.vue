@@ -1,13 +1,24 @@
 <template>
-  <v-app>
-    <v-app-bar app color="black" dense flat class="px-2 mb-0 pb-0">
+  <v-app width="100%">
+    <v-app-bar app color="white" elevation="1" class="px-5" dense>
       <v-toolbar-title>
-        <img src="~/assets/brand/logo.png" class="logo" alt="Logo Samu" />
+        <img
+          src="~/assets/brand/logo_blue.png"
+          class="logo mt-2"
+          alt="Logo Samu"
+        />
       </v-toolbar-title>
       <v-spacer />
-      <v-btn icon  color="primary">
-        <v-icon>mdi-cart-outline</v-icon>
-      </v-btn>
+
+      <v-toolbar-items>
+        <v-btn text class="text-capitalize">
+          Entrar
+          <v-icon right color="black">mdi-account-outline</v-icon>
+        </v-btn>
+        <v-btn icon color="primary">
+          <v-icon>mdi-cart-outline</v-icon>
+        </v-btn>
+      </v-toolbar-items>
     </v-app-bar>
     <v-main class="white">
       <v-container class="pa-0" fluid>
@@ -82,9 +93,7 @@ export default {
 
 <style scoped>
 .logo {
-  width: 8rem;
-  height: 4rem;
-  margin-top: 10px;
+  width: 6rem;
 }
 
 .margin-mobile {
@@ -93,6 +102,6 @@ export default {
 }
 
 .margin-custom {
-  //margin-left: 5rem;
+  margin-left: 5rem;
 }
 </style>
