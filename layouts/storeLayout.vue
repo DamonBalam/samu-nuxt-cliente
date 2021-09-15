@@ -1,14 +1,18 @@
 <template>
   <v-app width="100%">
-    <v-app-bar app color="white" elevation="1" class="px-5" dense>
+    <v-app-bar app color="white" elevation="1" class="px-5" dense fixed>
       <v-toolbar-title>
-        <img
-          src="~/assets/brand/logo_blue.png"
-          class="logo mt-2"
-          alt="Logo Samu"
-        />
+        <nuxt-link to="/">
+          <img
+            src="~/assets/brand/logo_blue.png"
+            class="logo mt-2"
+            alt="Logo Samu"
+
+          />
+        </nuxt-link>
+
       </v-toolbar-title>
-      <v-spacer />
+      <v-spacer/>
 
       <v-toolbar-items>
         <v-btn text class="text-capitalize">
@@ -30,9 +34,10 @@
 
 <script>
 import Logout from "../components/UI/LogoutComponent";
+
 export default {
   name: "panelLayout",
-  components: { Logout },
+  components: {Logout},
   data() {
     return {
       drawer: true,
@@ -98,7 +103,7 @@ export default {
 
 .margin-mobile {
   display: flex;
-  justify-items: space-between;
+  justify-content: space-between;
 }
 
 .margin-custom {

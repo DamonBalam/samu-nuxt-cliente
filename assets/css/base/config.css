@@ -14,6 +14,12 @@ body {
 .texto-color-cyan{
   color: var(--main-color-cyan)!important;
 }
+/*.texto-color-amarillo{*/
+/*  color: var(--main-color-amarillo)!important;*/
+/*}*/
+/*.texto-color-magenta{*/
+/*  color: var(--main-color-cyan)!important;*/
+/*}*/
 /* ! FONDOS */
 .bg-amarillo {
   background-color: var(--main-color-amarillo);
