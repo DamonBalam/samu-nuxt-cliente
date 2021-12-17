@@ -15,12 +15,23 @@
       <v-spacer/>
 
       <v-toolbar-items>
-        <v-btn text class="text-capitalize">
+        <v-btn text class="text-capitalize" to="/login">
           Entrar
           <v-icon right color="black">mdi-account-outline</v-icon>
         </v-btn>
+
+
         <v-btn icon color="primary">
-          <v-icon>mdi-cart-outline</v-icon>
+          <v-badge
+            :content="1"
+            :value="1"
+            color="bg-morado"
+            overlap
+          >
+            <v-icon>
+              mdi-cart-outline
+            </v-icon>
+          </v-badge>
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
