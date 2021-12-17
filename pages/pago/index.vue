@@ -26,85 +26,87 @@
                 </v-breadcrumbs>
               </v-col>
 
-              <v-col cols="8" offset="2" class="mt-10">
-                <label class="d-block black--text mb-2">Información de contacto</label>
-                <v-text-field placeholder="E-mail" outlined dense></v-text-field>
+              <v-col cols="8" offset="2" class="mt-10 mb-10">
+                <label class="d-block black--text headline mb-2">Información</label>
+                <v-card outlined class="pa-2">
+                  <div class="d-flex justify-space-between align-center">
+                    <span class="d-block ">Contacto</span>
+                    <v-btn text small>
+                      Editar
+                      <v-icon small right>mdi-pencil-outline</v-icon>
+                    </v-btn>
+                  </div>
+
+                  <hr class="my-2 separador">
+
+                  <div class="d-flex justify-space-between align-center">
+                    <span class="d-block">Dirección</span>
+                    <v-btn text small>
+                      Editar
+                      <v-icon small right>mdi-pencil-outline</v-icon>
+                    </v-btn>
+                  </div>
+
+                  <hr class="my-2 separador">
+
+
+                  <div class="d-flex justify-space-between align-center">
+                    <span class="d-block">Teléfono</span>
+                    <v-btn text small>
+                      Editar
+                      <v-icon small right>mdi-pencil-outline</v-icon>
+                    </v-btn>
+                  </div>
+
+                  <hr class="my-2 separador">
+
+
+                  <div class="d-flex justify-space-between align-center">
+                    <span class="d-block">Envío</span>
+                    <v-btn text small>
+                      Editar
+                      <v-icon small right>mdi-pencil-outline</v-icon>
+                    </v-btn>
+                  </div>
+                </v-card>
               </v-col>
 
               <v-col cols="8" offset="2">
-                <v-radio-group v-model="tipoDeEntrega">
+                <v-radio-group v-model="tipoDeEntrega" dense>
                   <template v-slot:label>
-                    <span class="d-block mb-2 black--text">Forma de entrega</span>
+                    <span class="d-block mb-2 black--text headline">Pago</span>
+                    <span>Selecciona tu forma de pago.</span>
                   </template>
-                  <v-radio :value="0">
-                    <template v-slot:label>
-                      <div class="black--text d-flex align-center">
-                        <v-icon color="black">mdi-van-utility</v-icon>
-                        <span class="d-block ml-2">Envío</span>
-                      </div>
-                    </template>
-                  </v-radio>
-                  <v-radio :value="1">
-                    <template v-slot:label>
-                      <div class="black--text d-flex align-center">
-                        <v-icon color="black">mdi-store-outline</v-icon>
-                        <span class="d-block ml-2">Recoger en la tienda</span>
-                      </div>
-                    </template>
-                  </v-radio>
+                  <v-card outlined class="pa-2">
+                    <v-radio :value="0" >
+                      <template v-slot:label>
+                        <span class="d-block ml-2">Transferencia bancaria</span>
+                      </template>
+                    </v-radio>
+                    <v-container v-if="tipoDeEntrega=== 0" class="fondo d-flex flex-column pa-5">
+                      <span class="d-block">Nombre del Banco</span>
+                      <span class="d-block">Titular de la Cuenta</span>
+                      <span class="d-block">Cuenta</span>
+                    </v-container>
+                    <hr class="separador my-2">
+                    <v-radio :value="1">
+                      <template v-slot:label>
+                          <span class="d-block ml-2">Sinpe Móvil</span>
+                      </template>
+                    </v-radio>
+                    <v-container v-if="tipoDeEntrega=== 1" class="fondo pa-5">
+                      <span>Nombre de la persona</span> -
+                      <span>Teléfono</span>
+                    </v-container>
+                  </v-card>
+
                 </v-radio-group>
               </v-col>
 
-              <v-col v-if="tipoDeEntrega === 0" cols="8" offset="2" class="mt-5">
-                <label class="d-block mb-5 black--text">Dirección de envío</label>
 
-                <v-row no-gutters>
-                  <v-col cols="6" class="pr-1">
-                    <v-text-field placeholder="Nombre" outlined dense></v-text-field>
-                  </v-col>
-                  <v-col cols="6" class="pl-1">
-                    <v-text-field placeholder="Apellido" outlined dense></v-text-field>
-                  </v-col>
-
-                  <v-col cols="4" class="pr-1">
-                    <v-text-field placeholder="Provincia" outlined dense></v-text-field>
-                  </v-col>
-
-                  <v-col cols="4" class="px-1">
-                    <v-text-field placeholder="Cantón" outlined dense></v-text-field>
-                  </v-col>
-
-                  <v-col cols="4" class="pl-1">
-                    <v-text-field placeholder="Distrito" outlined dense></v-text-field>
-                  </v-col>
-
-                  <v-col cols="12">
-                    <v-text-field placeholder="Dirección exacta" outlined dense></v-text-field>
-                  </v-col>
-                  <v-col cols="12">
-                    <v-text-field placeholder="Número de teléfono" outlined dense></v-text-field>
-                  </v-col>
-
-                </v-row>
-              </v-col>
-
-              <v-col v-else cols="8" offset="2" class="mt-5">
-                <label class="d-block mb-5 black--text">Ubicación de la tienda</label>
-                <v-textarea dense outlined readonly no-resize v-model="tiendaUbicacion"></v-textarea>
-              </v-col>
-
-              <v-col cols="8" offset="2" class="mt-5">
-                <v-checkbox v-model="registrarme">
-                  <template v-slot:label>
-                    <div class="black--text">
-                      Registrarme para guardar mi información y consultar más rápidamente la próxima vez.
-                    </div>
-                  </template>
-                </v-checkbox>
-              </v-col>
 
               <v-col cols8 offset="2">
-                <v-btn class="texto-capitalizado font-weight-bold px-16 btn-border-black" color="primary">Continuar
+                <v-btn class="texto-capitalizado font-weight-bold px-16 btn-border-black" color="primary">Finalizar Pedido
                 </v-btn>
               </v-col>
             </v-row>
@@ -125,7 +127,7 @@ import StoreLayout from "@/layouts/storeLayout.vue"
 import DetalleComponent from "@/components/Pagos/DetalleComponent";
 
 export default {
-  name: "Pago",
+  name: "Envio",
   components: {DetalleComponent, StoreLayout},
   data() {
     return {
@@ -156,5 +158,14 @@ export default {
 </script>
 
 <style scoped>
+.separador {
+  color: #e0e0e0;
+}
+span {
+  color: #858080;
+}
+.fondo {
+  background-color: rgb(243, 243, 243);
 
+}
 </style>

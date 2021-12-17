@@ -26,86 +26,76 @@
                 </v-breadcrumbs>
               </v-col>
 
-              <v-col cols="8" offset="2" class="mt-10">
-                <label class="d-block black--text mb-2">Información de contacto</label>
-                <v-text-field placeholder="E-mail" outlined dense></v-text-field>
+              <v-col cols="8" offset="2" class="mt-10 mb-10">
+                <label class="d-block black--text headline mb-2">Información</label>
+                <v-card outlined class="pa-2">
+                  <div class="d-flex justify-space-between align-center">
+                    <span class="d-block ">Contacto</span>
+                    <v-btn text small>
+                      Editar
+                      <v-icon small right>mdi-pencil-outline</v-icon>
+                    </v-btn>
+                  </div>
+
+                  <hr class="my-2 separador">
+
+                  <div class="d-flex justify-space-between align-center">
+                    <span class="d-block">Dirección</span>
+                    <v-btn text small>
+                      Editar
+                      <v-icon small right>mdi-pencil-outline</v-icon>
+                    </v-btn>
+                  </div>
+
+                  <hr class="my-2 separador">
+
+
+                  <div class="d-flex justify-space-between align-center">
+                    <span class="d-block">Teléfono</span>
+                    <v-btn text small>
+                      Editar
+                      <v-icon small right>mdi-pencil-outline</v-icon>
+                    </v-btn>
+                  </div>
+
+
+                </v-card>
               </v-col>
 
               <v-col cols="8" offset="2">
                 <v-radio-group v-model="tipoDeEntrega">
                   <template v-slot:label>
-                    <span class="d-block mb-2 black--text">Forma de entrega</span>
+                    <span class="d-block mb-2 black--text headline">Envíos</span>
+                    <span>Selecciona tu opción de envío.</span>
                   </template>
-                  <v-radio :value="0">
-                    <template v-slot:label>
-                      <div class="black--text d-flex align-center">
-                        <v-icon color="black">mdi-van-utility</v-icon>
-                        <span class="d-block ml-2">Envío</span>
-                      </div>
-                    </template>
-                  </v-radio>
-                  <v-radio :value="1">
-                    <template v-slot:label>
-                      <div class="black--text d-flex align-center">
-                        <v-icon color="black">mdi-store-outline</v-icon>
-                        <span class="d-block ml-2">Recoger en la tienda</span>
-                      </div>
-                    </template>
-                  </v-radio>
+                  <v-card outlined class="pa-2">
+                    <v-radio :value="0" >
+                      <template v-slot:label>
+                        <div class="black--text d-flex align-center justify-space-between" style="width: 100%">
+                          <span class="d-block ml-2">Envío dentro de la GAM</span>
+                          <span class="d-block mr-2">$3.000</span>
+                        </div>
+                      </template>
+                    </v-radio>
+                    <hr class="separador my-2">
+                    <v-radio :value="1">
+                      <template v-slot:label>
+                        <div class="black--text d-flex align-center justify-space-between" style="width: 100%">
+                          <span class="d-block ml-2">Envío fuera de la GAM</span>
+                          <span class="d-block mr-2">$5.000</span>
+                        </div>
+                      </template>
+                    </v-radio>
+                  </v-card>
+
                 </v-radio-group>
               </v-col>
 
-              <v-col v-if="tipoDeEntrega === 0" cols="8" offset="2" class="mt-5">
-                <label class="d-block mb-5 black--text">Dirección de envío</label>
 
-                <v-row no-gutters>
-                  <v-col cols="6" class="pr-1">
-                    <v-text-field placeholder="Nombre" outlined dense></v-text-field>
-                  </v-col>
-                  <v-col cols="6" class="pl-1">
-                    <v-text-field placeholder="Apellido" outlined dense></v-text-field>
-                  </v-col>
-
-                  <v-col cols="4" class="pr-1">
-                    <v-text-field placeholder="Provincia" outlined dense></v-text-field>
-                  </v-col>
-
-                  <v-col cols="4" class="px-1">
-                    <v-text-field placeholder="Cantón" outlined dense></v-text-field>
-                  </v-col>
-
-                  <v-col cols="4" class="pl-1">
-                    <v-text-field placeholder="Distrito" outlined dense></v-text-field>
-                  </v-col>
-
-                  <v-col cols="12">
-                    <v-text-field placeholder="Dirección exacta" outlined dense></v-text-field>
-                  </v-col>
-                  <v-col cols="12">
-                    <v-text-field placeholder="Número de teléfono" outlined dense></v-text-field>
-                  </v-col>
-
-                </v-row>
-              </v-col>
-
-              <v-col v-else cols="8" offset="2" class="mt-5">
-                <label class="d-block mb-5 black--text">Ubicación de la tienda</label>
-                <v-textarea dense outlined readonly no-resize v-model="tiendaUbicacion"></v-textarea>
-              </v-col>
-
-              <v-col cols="8" offset="2" class="mt-5">
-                <v-checkbox v-model="registrarme">
-                  <template v-slot:label>
-                    <div class="black--text">
-                      Registrarme para guardar mi información y consultar más rápidamente la próxima vez.
-                    </div>
-                  </template>
-                </v-checkbox>
-              </v-col>
 
               <v-col cols8 offset="2">
-                <v-btn class="texto-capitalizado font-weight-bold px-16 btn-border-black" color="primary">Continuar
-                </v-btn>
+                <nuxt-link tag="v-btn" class="texto-capitalizado font-weight-bold px-16 btn-border-black primary" to="/pago" >Continuar
+                </nuxt-link>
               </v-col>
             </v-row>
           </v-form>
@@ -156,5 +146,10 @@ export default {
 </script>
 
 <style scoped>
-
+.separador {
+  color: #e0e0e0;
+}
+span {
+  color: #858080;
+}
 </style>
