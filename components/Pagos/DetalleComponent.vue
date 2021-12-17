@@ -3,18 +3,23 @@
     class="fondo"
   >
 
-    <div class="d-flex flex-column flex-md-row  justify-space-around mt-15">
+    <div class="d-flex flex-column flex-md-row align-center align-md-start mt-15">
       <div>
         <v-avatar size="100" tile>
           <img src="~assets/img/Foto_Producto.jpg" alt="imagen del producto"/>
         </v-avatar>
       </div>
-      <div>
-        <p class="my-0 font-weight-bold">Nombre del producto</p>
-        <p class="my-0">Cantidad</p>
-      </div>
-      <div>
-        <p class="my-0 font-weight-light">Precio</p>
+      <div class="d-flex flex-column flex-md-row justify-md-space-between mt-2 mt-md-0"  style="width: 100%">
+
+        <div class="d-flex flex-column align-center align-md-start  justify-md-start ml-md-5">
+          <p class="my-0 font-weight-bold">Nombre del producto</p>
+          <p class="my-0">Cantidad</p>
+        </div>
+
+        <div class="d-flex align-center align-md-start">
+          <p class="d-block my-0 font-weight-light mx-auto mr-md-10">Precio</p>
+        </div>
+
       </div>
     </div>
 
@@ -32,7 +37,7 @@
     <hr class="separador my-10">
 
 
-    <div class="d-flex flex-column flex-md-row  justify-space-between mt-2">
+    <div class="d-flex  justify-space-between mt-2">
       <span class="ml-5 ml-md-10 font-weight-bold headline">Total</span>
       <span class="mr-5 mr-md-10 headline">{{ total }}</span>
     </div>
