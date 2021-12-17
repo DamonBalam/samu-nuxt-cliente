@@ -125,7 +125,7 @@ import StoreLayout from "@/layouts/storeLayout.vue"
 import DetalleComponent from "@/components/Pagos/DetalleComponent";
 
 export default {
-  name: "Pago",
+  name: "Envio",
   components: {DetalleComponent, StoreLayout},
   data() {
     return {
@@ -141,12 +141,12 @@ export default {
         },
         {
           text: 'Envío',
-          disabled: true,
+          disabled: false,
           href: '/envio',
         },
         {
           text: 'Pago',
-          disabled: false,
+          disabled: true,
           href: 'pago',
         },
       ]

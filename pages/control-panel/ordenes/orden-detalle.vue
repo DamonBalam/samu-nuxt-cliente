@@ -125,7 +125,7 @@ export default {
         { id: 1, nombre: "Pagado" },
         { id: 2, nombre: "Cancelado" },
         { id: 3, nombre: "Reembolsado" },
-        { id: 4, nombre: "En espera de pago" },
+        { id: 4, nombre: "En espera de informacion" },
       ],
       estadosEnvio: [
         { id: 1, nombre: "En proceso" },

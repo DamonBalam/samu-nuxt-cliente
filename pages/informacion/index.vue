@@ -104,8 +104,8 @@
               </v-col>
 
               <v-col cols8 offset="2">
-                <v-btn class="texto-capitalizado font-weight-bold px-16 btn-border-black" color="primary">Continuar
-                </v-btn>
+                <nuxt-link tag="v-btn" class="texto-capitalizado font-weight-bold px-16 btn-border-black primary" to="/envio" >Continuar
+                </nuxt-link>
               </v-col>
             </v-row>
           </v-form>
@@ -113,7 +113,7 @@
 
         <!-- Detalle -->
         <v-col cols="4">
-          <DetalleComponent/>
+          <DetalleComponent envio="Se calcula en el siguiente paso" />
         </v-col>
       </v-row>
     </template>
@@ -125,7 +125,7 @@ import StoreLayout from "@/layouts/storeLayout.vue"
 import DetalleComponent from "@/components/Pagos/DetalleComponent";
 
 export default {
-  name: "Pago",
+  name: "Informacion",
   components: {DetalleComponent, StoreLayout},
   data() {
     return {
@@ -136,7 +136,7 @@ export default {
       items: [
         {
           text: 'Información',
-          disabled: true,
+          disabled: false,
           href: '/informacion',
         },
         {
@@ -146,7 +146,7 @@ export default {
         },
         {
           text: 'Pago',
-          disabled: false,
+          disabled: true,
           href: 'pago',
         },
       ]
