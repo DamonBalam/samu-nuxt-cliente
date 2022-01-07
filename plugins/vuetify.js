@@ -12,12 +12,12 @@ export default ctx => {
     theme: {
       themes: {
         light: {
-          primary: '#06b0d7',
+          primary: '#1D6B41',
           accent: colors.grey.darken3,
-          secondary: '#673ab7',
+          secondary: '#8EC63F',
           info: colors.teal.lighten1,
-          warning: '#ffc000',
-          error: '#ff005d',
+          warning: colors.yellow.darken3,
+          error: colors.red.darken4,
           success: colors.green.accent3
         }
       }

@@ -7,7 +7,7 @@
     >
       <v-toolbar-title :class="margin">
         <img
-          src="~/assets/brand/logo.png"
+          src="~/assets/brand/Logotipo_Blanco.png"
           class="logo mx-auto"
           alt="Logo Samu"
         />
@@ -22,7 +22,7 @@
       app
       color="primary"
     >
-      <span>SAMU &copy; {{ new Date().getFullYear() }}</span>
+      <span class="font-weight-medium white--text">DAGGA &copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>
 

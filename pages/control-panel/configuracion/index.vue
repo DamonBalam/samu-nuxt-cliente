@@ -97,7 +97,7 @@ export default {
 
 <style scoped>
 .v-application .primary {
-    background-color: #06b0d7 !important;
-    border-color: black !important;
+  /*background-color: #1D6B41 !important;*/
+  border-color: black !important;
 }
 </style>

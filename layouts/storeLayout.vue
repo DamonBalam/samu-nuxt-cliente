@@ -4,9 +4,9 @@
       <v-toolbar-title>
         <nuxt-link to="/">
           <img
-            src="~/assets/brand/logo_blue.png"
+            src="~/assets/brand/Logotipo_Color.png"
             class="logo mt-2"
-            alt="Logo Samu"
+            alt="Logo Dagga"
 
           />
         </nuxt-link>
@@ -25,7 +25,7 @@
           <v-badge
             :content="1"
             :value="1"
-            color="bg-morado"
+            color="secondary"
             overlap
           >
             <v-icon>

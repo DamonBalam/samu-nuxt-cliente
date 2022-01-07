@@ -43,7 +43,7 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
       <v-toolbar-title>
         <img
-          src="~/assets/brand/logo.png"
+          src="~/assets/brand/Logotipo_Blanco.png"
           class="logo mx-auto"
           alt="Logo Samu"
         />

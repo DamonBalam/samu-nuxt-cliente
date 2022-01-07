@@ -17,7 +17,7 @@
           >
             <!-- <span class="black--text text-h5">Logo</span> -->
             <img
-              src="~/assets/brand/isologo.png"
+              src="~/assets/brand/Iso_Color.png"
               alt="Logo store"
             />
           </v-avatar>
@@ -27,7 +27,7 @@
               style="font-size: 28px"
             >{{ store.name }}</span
             >
-            <span class="">{{ store.keyName }}</span>
+            <span class="mt-2">{{ store.keyName }}</span>
           </div>
         </v-card-text>
         <v-card-text class="pa-0 ma-0">
@@ -241,14 +241,14 @@ export default {
   data() {
     return {
       store: {
-        name: "Samu Mascotas",
-        keyName: "@appsamu",
+        name: "Dagga Store",
+        keyName: "@appDagga",
         urlImage: "",
         menu: [
           {label: "Inicio", link: "/inicio"},
-          {label: "Juguetes", link: "/inicio"},
-          {label: "Alimento", link: "/inicio"},
-          {label: "Ropa", link: "/inicio"},
+          {label: "Item 1", link: "/inicio"},
+          {label: "Item 2", link: "/inicio"},
+          {label: "Item 3", link: "/inicio"},
         ],
       },
     }
@@ -258,8 +258,8 @@ export default {
 
 <style scoped>
 .active-link:hover {
-  color: #06b0d7 !important;
-  border-bottom: 3px solid #06b0d7;
+  color: #8EC63F !important;
+  border-bottom: 3px solid #8EC63F;
 }
 .altura {
   min-height: calc(100vh - 248px);

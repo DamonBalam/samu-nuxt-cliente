@@ -11,7 +11,7 @@ const actions = {
         commit('SET_AUTENTICADO', true)
         localStorage.setItem('token', res.data.token)
 
-        $nuxt.$router.push('/control-panel/panel')
+        await $nuxt.$router.push('/control-panel/panel')
 
         return true
       }
@@ -28,7 +28,7 @@ const actions = {
       commit('SET_AUTENTICADO', false)
       localStorage.clear()
 
-      $nuxt.$router.push('/login')
+      await $nuxt.$router.push('/login')
     }
 
   }

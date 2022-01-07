@@ -21,10 +21,10 @@
                 offset-md="7"
                 md="5"
               >
-                <h1 class="texto-cairo-bold title-custom mb-0 pb-0">
-                  ¡Vende online con Samu.app!
+                <h1 class="texto-cairo-bold title-custom mb-0 pb-0 white--text">
+                  ¡Vende online con Dagga.app!
                 </h1>
-                <p class="parrafo-custom">
+                <p class="parrafo-custom white--text">
                   Juntos en camino al éxito. Impulsa tu negocio al máximo con
                   nosotros.
                 </p>
@@ -152,15 +152,15 @@ export default {
     imgMovil() {
       switch (this.$vuetify.breakpoint.name) {
         case 'xs':
-          return 'https://res.cloudinary.com/balamcode/image/upload/v1624821134/samu/Bg_1_Movil_jlktd0.jpg'
+          return 'https://res.cloudinary.com/balamcode/image/upload/v1641593498/samu/Slide_1920_Full_szmijk.jpg'
         case 'sm':
-          return 'https://res.cloudinary.com/balamcode/image/upload/v1624821134/samu/Bg_1_Movil_jlktd0.jpg'
+          return 'https://res.cloudinary.com/balamcode/image/upload/v1641593498/samu/Slide_1920_Full_szmijk.jpg'
         case 'md':
-          return 'https://res.cloudinary.com/balamcode/image/upload/v1624821138/samu/Bg_1_cbdnid.jpg'
+          return 'https://res.cloudinary.com/balamcode/image/upload/v1641593498/samu/Slide_1920_Full_szmijk.jpg'
         case 'lg':
-          return 'https://res.cloudinary.com/balamcode/image/upload/v1624821138/samu/Bg_1_cbdnid.jpg'
+          return 'https://res.cloudinary.com/balamcode/image/upload/v1641593498/samu/Slide_1920_Full_szmijk.jpg'
         case 'xl':
-          return 'https://res.cloudinary.com/balamcode/image/upload/v1624821138/samu/Bg_1_cbdnid.jpg'
+          return 'https://res.cloudinary.com/balamcode/image/upload/v1641593498/samu/Slide_1920_Full_szmijk.jpg'
       }
     },
     marginMovil() {
@@ -205,7 +205,7 @@ export default {
 }
 
 .title-custom {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
 }
 
 .parrafo-custom {
@@ -217,7 +217,8 @@ export default {
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-//background-position: top center; //background-image: url("~/assets/brand/Bg_1_Movil.jpg");
+  /*background-position: top center;*/
+  /*background-image: url("~/assets/brand/Bg_1_Movil.jpg");*/
 }
 
 .margin-mobile {
@@ -225,7 +226,6 @@ export default {
 }
 
 .no-margin {
-
   margin: 5rem auto 0 auto;
 }
 </style>
