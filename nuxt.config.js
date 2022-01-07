@@ -3,10 +3,10 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - samu-client',
-    title: 'SAMU',
+    titleTemplate: '%s - dagga-client',
+    title: 'Dagga',
     htmlAttrs: {
-      lang: 'ess'
+      lang: 'es'
     },
     meta: [
       {charset: 'utf-8'},
